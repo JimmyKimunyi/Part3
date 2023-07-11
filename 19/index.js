@@ -43,7 +43,9 @@ app.get("/api/persons/:id", (req, res, next) => {
 
 app.get("/info", (req, res) => {
   const time = new Date().toString();
-  res.send(`<p>  Phonebook has info for ${persons.length} <br /> ${time} </p>`);
+  res.send(
+    `<p> Phonebook has info for : ${persons.length} <br /> ${time} </p>`
+  );
 });
 
 app.delete("/api/persons/:id", (req, res, next) => {
