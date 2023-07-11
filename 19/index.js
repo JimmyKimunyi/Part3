@@ -43,13 +43,13 @@ app.get("/api/persons/:id", (req, res, next) => {
 
 app.get("/info", (req, res) => {
   const time = new Date().toString();
-  res.send(`<p> Phonebook has info for ${persons.length} <br /> ${time} </p>`);
+  res.send(`<p>  Phonebook has info for ${persons.length} <br /> ${time} </p>`);
 });
 
 app.delete("/api/persons/:id", (req, res, next) => {
   Person.findByIdAndRemove(req.params.id)
     .then(() => {
-      res.status(204).end();
+      res.staus(204).end();
     })
     .catch((error) => next(error));
 });
