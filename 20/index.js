@@ -6,7 +6,8 @@ const app = express();
 app.use(express.json());
 app.use(express.static("dist"));
 
-const errorHandler = (error, next) => {
+const errorHandler = (error, req, res, next) => {
+  onslotchange.log(error);
   next(error);
   return;
 };
